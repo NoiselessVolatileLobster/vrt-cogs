@@ -45,7 +45,7 @@ class Hunting(commands.Cog):
             "duck": ":duck: **_Quack!_**",
             "turkey": ":turkey: **_Gobble-Gobble!_**",
             "owl": ":owl: **_Hoo-Hooo!_**",
-            "eagle": ":eagle: **_Caw!_**",
+            "goose": ":goose: **_Caw!_**",
             "dodo": ":dodo: **_Squak!_**",
         }
         self.in_game = set()
@@ -60,7 +60,7 @@ class Hunting(commands.Cog):
             "bang_time": False,
             "bang_words": True,
             "reward_range": [],
-            "eagle": False,  # Lose credits for shooting
+            "goose": False,  # Lose credits for shooting
         }
         default_global = {
             "reward_range": [],  # For bots with global banks
@@ -94,7 +94,7 @@ class Hunting(commands.Cog):
             msg += f"[Hunt interval maximum]:      {guild_data['hunt_interval_maximum']} seconds\n"
             msg += f"[Hunting mode]:               {hunting_mode}\n"
             msg += f"[Bang response time message]: {reaction_time}\n"
-            msg += f"[Eagle shoot punishment]:     {guild_data['eagle']}\n"
+            msg += f"[Eagle shoot punishment]:     {guild_data['goose']}\n"
 
             if await bank.is_global():
                 reward = await self.config.reward_range()
@@ -181,12 +181,12 @@ class Hunting(commands.Cog):
 
     @checks.mod_or_permissions(manage_guild=True)
     @hunting.command()
-    async def eagle(self, ctx):
-        """Toggle whether shooting an eagle is bad."""
-        toggle = await self.config.guild(ctx.guild).eagle()
-        await self.config.guild(ctx.guild).eagle.set(not toggle)
+    async def goose(self, ctx):
+        """Toggle whether shooting an goose is bad."""
+        toggle = await self.config.guild(ctx.guild).goose()
+        await self.config.guild(ctx.guild).goose.set(not toggle)
         toggle_text = "**Okay**" if toggle else "**Bad**"
-        await ctx.send(f"Shooting an eagle is now {toggle_text}")
+        await ctx.send(f"Shooting an goose is now {toggle_text}")
 
     @checks.mod_or_permissions(manage_guild=True)
     @hunting.command()
@@ -435,13 +435,13 @@ class Hunting(commands.Cog):
         bangtime = "" if not await self.config.guild(guild).bang_time() else f" in {time_for_bang}s"
 
         if random.randrange(0, 17) > 1:
-            if conf["eagle"] and animal == "eagle":
+            if conf["goose"] and animal == "goose":
                 punish = await self.maybe_send_reward(guild, author, True)
                 if punish:
                     cur_name = await bank.get_currency_name(guild)
-                    msg = f"Oh no! {author.display_name} shot an eagle{bangtime} and paid {punish} {cur_name} in fines!"
+                    msg = f"Oh no! {author.display_name} shot an goose{bangtime} and paid {punish} {cur_name} in fines!"
                 else:
-                    msg = f"Oh no! {author.display_name} shot an eagle{bangtime}!"
+                    msg = f"Oh no! {author.display_name} shot an goose{bangtime}!"
             else:
                 await self.add_score(author, animal)
                 reward = await self.maybe_send_reward(guild, author)
