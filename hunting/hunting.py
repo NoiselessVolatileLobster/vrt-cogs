@@ -45,7 +45,7 @@ class Hunting(commands.Cog):
             "duck": ":duck: **_Quack!_**",
             "turkey": ":turkey: **_Gobble-Gobble!_**",
             "owl": ":owl: **_Hoo-Hooo!_**",
-            "goose": ":goose: **_Caw!_**",
+            "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
             "dodo": ":dodo: **_Squak!_**",
         }
         self.in_game = set()
