@@ -439,9 +439,9 @@ class Hunting(commands.Cog):
                 punish = await self.maybe_send_reward(guild, author, True)
                 if punish:
                     cur_name = await bank.get_currency_name(guild)
-                    msg = f"Oh no! {author.display_name} shot an goose{bangtime} and paid {punish} {cur_name} in fines!"
+                    msg = f"Oh no! {author.display_name} shot a goose{bangtime} and paid {punish} {cur_name} in fines!"
                 else:
-                    msg = f"Oh no! {author.display_name} shot an goose{bangtime}!"
+                    msg = f"Oh no! {author.display_name} shot a goose{bangtime}!"
             else:
                 await self.add_score(author, animal)
                 reward = await self.maybe_send_reward(guild, author)
