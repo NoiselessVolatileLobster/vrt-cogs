@@ -420,7 +420,8 @@ class Hunting(commands.Cog):
             try:
                 bang_msg = await self.bot.wait_for("message", check=mcheck, timeout=timeout)
             except asyncio.TimeoutError:
-                return await channel.send(f"The {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
+                return await channel.send(f"The {animal} got away!")
+                return await channel.send(f"https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
             author = bang_msg.author
         else:
             emoji = "\N{COLLISION SYMBOL}"
