@@ -51,6 +51,7 @@ class Hunting(commands.Cog):
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
             "Harry": ":old_man: **_Hey, Dick? I'm over here!_**",
             "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
+            "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER_**",
             "dodo": ":dodo: **_Squak!_**",
         }
         self.in_game = set()
