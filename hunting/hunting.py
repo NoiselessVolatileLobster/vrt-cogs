@@ -45,6 +45,10 @@ class Hunting(commands.Cog):
             "duck": ":duck: **_Quack!_**",
             "turkey": ":turkey: **_Gobble-Gobble!_**",
             "owl": ":owl: **_Hoo-Hooo!_**",
+            "parrot": ":parrot: **CACAOOOOOO**",
+            "bee": ":bee: **_BUZZ OFF**",
+            "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
+            "Harry": ":old_man: **_Hey, Dick? I'm over here!_**",
             "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
             "dodo": ":dodo: **_Squak!_**",
         }
