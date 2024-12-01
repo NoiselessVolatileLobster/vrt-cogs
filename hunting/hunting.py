@@ -420,8 +420,7 @@ class Hunting(commands.Cog):
             try:
                 bang_msg = await self.bot.wait_for("message", check=mcheck, timeout=timeout)
             except asyncio.TimeoutError:
-                return await channel.send(f"The {animal} got away!")
-                return await channel.send(f"https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
+                return await channel.send(f"The {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
             author = bang_msg.author
         else:
             emoji = "\N{COLLISION SYMBOL}"
@@ -440,7 +439,7 @@ class Hunting(commands.Cog):
                 punish = await self.maybe_send_reward(guild, author, True)
                 if punish:
                     cur_name = await bank.get_currency_name(guild)
-                    msg = f"# RUDE! {author.display_name} shot a goose{bangtime} and paid {punish} {cur_name} in fines!"
+                    msg = f"RUDE! {author.display_name} shot a goose{bangtime} and paid {punish} {cur_name} in fines!"
                 else:
                     msg = f"Oh no! {author.display_name} shot a goose{bangtime}!"
             else:
