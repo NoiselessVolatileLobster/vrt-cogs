@@ -51,7 +51,7 @@ class Hunting(commands.Cog):
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
             "Harry": ":old_man: **_Hey, Dick? I'm over here!_**",
             "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
-            "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER_**",
+            "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER...._**",
             "dodo": ":dodo: **_Squak!_**",
         }
         self.in_game = set()
@@ -426,7 +426,7 @@ class Hunting(commands.Cog):
             try:
                 bang_msg = await self.bot.wait_for("message", check=mcheck, timeout=timeout)
             except asyncio.TimeoutError:
-                return await channel.send(f"The {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
+                return await channel.send(f"The {animal} got away!")
             author = bang_msg.author
         else:
             emoji = "\N{COLLISION SYMBOL}"
@@ -434,7 +434,7 @@ class Hunting(commands.Cog):
             try:
                 reaction, author = await self.bot.wait_for("reaction_add", check=rcheck, timeout=timeout)
             except asyncio.TimeoutError:
-                return await channel.send(f"The {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
+                return await channel.send(f"The {animal} got away!")
 
         bang_now = datetime.now().timestamp()
         time_for_bang = round(bang_now - now, 1)
@@ -457,7 +457,7 @@ class Hunting(commands.Cog):
                 else:
                     msg = f"{author.display_name} shot a {animal}{bangtime}!"
         else:
-            msg = f"{author.display_name} missed the shot and the {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788"
+            msg = f"{author.display_name} missed the shot and the {animal} got away!"
 
         await channel.send(bold(msg))
 
