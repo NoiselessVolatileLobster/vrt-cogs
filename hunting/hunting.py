@@ -428,7 +428,7 @@ class Hunting(commands.Cog):
             try:
                 reaction, author = await self.bot.wait_for("reaction_add", check=rcheck, timeout=timeout)
             except asyncio.TimeoutError:
-                return await channel.send(f"The {animal} got away!")
+                return await channel.send(f"The {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788")
 
         bang_now = datetime.now().timestamp()
         time_for_bang = round(bang_now - now, 1)
@@ -451,7 +451,7 @@ class Hunting(commands.Cog):
                 else:
                     msg = f"{author.display_name} shot a {animal}{bangtime}!"
         else:
-            msg = f"{author.display_name} missed the shot and the {animal} got away!"
+            msg = f"{author.display_name} missed the shot and the {animal} got away! https://tenor.com/view/duck-hunt-nes-laughing-gif-9700788"
 
         await channel.send(bold(msg))
 
