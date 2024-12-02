@@ -56,7 +56,7 @@ class Bonging(commands.Cog):
             "bong_time": False,
             "bong_words": True,
             "reward_range": [],
-            "goose": False,  # Lose credits for shooting
+            "munchies": False,  # Lose credits for shooting
         }
         default_global = {
             "reward_range": [],  # For bots with global banks
@@ -85,12 +85,12 @@ class Bonging(commands.Cog):
             reaction_time = "On" if guild_data["bong_time"] else "Off"
 
             msg = f"[Bonging in]:                 {humanize_list(channel_names)}\n"
-            msg += f"[Bang timeout]:               {guild_data['wait_for_bong_timeout']} seconds\n"
+            msg += f"[Bong timeout]:               {guild_data['wait_for_bong_timeout']} seconds\n"
             msg += f"[Hunt interval minimum]:      {guild_data['hunt_interval_minimum']} seconds\n"
             msg += f"[Hunt interval maximum]:      {guild_data['hunt_interval_maximum']} seconds\n"
             msg += f"[Bonging mode]:               {bonging_mode}\n"
-            msg += f"[Bang response time message]: {reaction_time}\n"
-            msg += f"[Eagle shoot punishment]:     {guild_data['goose']}\n"
+            msg += f"[Bong response time message]: {reaction_time}\n"
+            msg += f"[Munchies shoot punishment]:     {guild_data['munchies']}\n"
 
             if await bank.is_global():
                 reward = await self.config.reward_range()
@@ -173,16 +173,16 @@ class Bonging(commands.Cog):
         toggle = await self.config.guild(ctx.guild).bong_time()
         await self.config.guild(ctx.guild).bong_time.set(not toggle)
         toggle_text = "will not" if toggle else "will"
-        await ctx.send(f"Bang reaction time {toggle_text} be shown.\n")
+        await ctx.send(f"Bong reaction time {toggle_text} be shown.\n")
 
     @checks.mod_or_permissions(manage_guild=True)
     @bonging.command()
-    async def goose(self, ctx):
-        """Toggle whether shooting an goose is bad."""
-        toggle = await self.config.guild(ctx.guild).goose()
-        await self.config.guild(ctx.guild).goose.set(not toggle)
+    async def munchies(self, ctx):
+        """Toggle whether shooting an munchies is bad."""
+        toggle = await self.config.guild(ctx.guild).munchies()
+        await self.config.guild(ctx.guild).munchies.set(not toggle)
         toggle_text = "**Okay**" if toggle else "**Bad**"
-        await ctx.send(f"Shooting an goose is now {toggle_text}")
+        await ctx.send(f"Shooting an munchies is now {toggle_text}")
 
     @checks.mod_or_permissions(manage_guild=True)
     @bonging.command()
@@ -274,7 +274,7 @@ class Bonging(commands.Cog):
             message = f"We're already bonging in {channel.mention}!"
         else:
             channel_list.append(channel.id)
-            message = f"The hunt has started in {channel.mention}. Good luck to all."
+            message = f"May the bonging begin in {channel.mention}. Good luck!"
             await self.config.guild(ctx.guild).channels.set(channel_list)
 
         await ctx.send(bold(message))
@@ -289,7 +289,7 @@ class Bonging(commands.Cog):
             message = f"We're not bonging in {channel.mention}!"
         else:
             channel_list.remove(channel.id)
-            message = f"The hunt has stopped in {channel.mention}."
+            message = f"The bonging has stopped in {channel.mention}."
             await self.config.guild(ctx.guild).channels.set(channel_list)
 
         await ctx.send(bold(message))
@@ -345,13 +345,13 @@ class Bonging(commands.Cog):
             message += "Maximum interval set to minimum of 240s.\n"
         if bong_timeout < 10:
             bong_timeout = 10
-            message += "Bang timeout set to minimum of 10s.\n"
+            message += "Bong timeout set to minimum of 10s.\n"
 
         await self.config.guild(ctx.guild).hunt_interval_minimum.set(interval_min)
         await self.config.guild(ctx.guild).hunt_interval_maximum.set(interval_max)
         await self.config.guild(ctx.guild).wait_for_bong_timeout.set(bong_timeout)
         message += (
-            f"Timing has been set:\nMin time {interval_min}s\nMax time {interval_max}s\nBang timeout {bong_timeout}s"
+            f"Timing has been set:\nMin time {interval_min}s\nMax time {interval_max}s\nBong timeout {bong_timeout}s"
         )
         await ctx.send(bold(message))
 
@@ -431,13 +431,13 @@ class Bonging(commands.Cog):
         bongtime = "" if not await self.config.guild(guild).bong_time() else f" in {time_for_bong}s"
 
         if random.randrange(0, 17) > 1:
-            if conf["goose"] and animal == "goose":
+            if conf["munchies"] and animal == "munchies":
                 punish = await self.maybe_send_reward(guild, author, True)
                 if punish:
                     cur_name = await bank.get_currency_name(guild)
-                    msg = f"RUDE! {author.display_name} shot a goose{bongtime} and paid {punish} {cur_name} in fines!"
+                    msg = f"RUDE! {author.display_name} shot a munchies{bongtime} and paid {punish} {cur_name} in fines!"
                 else:
-                    msg = f"Oh no! {author.display_name} shot a goose{bongtime}!"
+                    msg = f"Oh no! {author.display_name} shot a munchies{bongtime}!"
             else:
                 await self.add_score(author, animal)
                 reward = await self.maybe_send_reward(guild, author)
