@@ -46,7 +46,7 @@ class Hunting(commands.Cog):
             "turkey": ":turkey: **_Gobble-Gobble!_**",
             "owl": ":owl: **_Hoo-Hooo!_**",
             "parrot": ":parrot: **CACAOOOOOO**",
-            "bee": ":bee: **_BUZZ OFF_**",
+            "bee": ":bee: **BUZZ OFF**",
             "flamingo": ":flamingo: **_SQUONK_**",
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
             "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
