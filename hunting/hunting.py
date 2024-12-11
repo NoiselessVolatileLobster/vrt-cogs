@@ -50,6 +50,7 @@ class Hunting(commands.Cog):
             "flamingo": ":flamingo: **_SQUONK_**",
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
             "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
+            "ostrich": ":ostrich: **HI! I don't know what sound an ostrich makes!**",
             "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER...._**",
             "dodo": ":dodo: **_Squak!_**",
         }
