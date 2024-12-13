@@ -49,7 +49,7 @@ class Hunting(commands.Cog):
             "bee": ":bee: **BUZZ OFF**",
             "flamingo": ":flamingo: **_SQUONK_**",
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
-            "goose": ":goose: **_HONK HONK MOTHERHONKERS_**",
+            "goose": "<a:GoosePat:1317242114035286118> **_HONK HONK MOTHERHONKERS_**",
             "ostrich": "<:ostrich:1211039583173615686> **HI! I don't know what sound an ostrich makes!**",
             "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER...._**",
             "dodo": ":dodo: **_Squak!_**",
