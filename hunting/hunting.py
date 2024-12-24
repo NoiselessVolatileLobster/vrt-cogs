@@ -52,6 +52,7 @@ class Hunting(commands.Cog):
             "goose": "<a:GoosePat:1317242114035286118> **_HONK HONK MOTHERHONKERS_**",
             "australian chef": ":cook: **g'day mate!**",
             "ostrich": "<:ostrich:1211039583173615686> **HI! I don't know what sound an ostrich makes!**",
+            "santaur": "<:santaur:1321157516289376322> **HO HO HO** Hoes hoes hoes! All of you!",
             "harambe": ":gorilla: **_LISTEN CLOSELY, I ONLY HAVE A FEW MINUTES. YOU SHOULD START STOCKING UP TOILET PAPER AND HAND SANITIZER...._**",
             "dodo": ":dodo: **_Squak!_**",
         }
