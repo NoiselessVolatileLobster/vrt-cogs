@@ -49,7 +49,7 @@ class Hunting(commands.Cog):
             "bee": ":bee: **BUZZ OFF**",
             "flamingo": ":flamingo: **_SQUONK_**",
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
-            "goose": "<a:canada_goose:1325943169279332443> **_HONK HONK MOTHERHONKERS_**",
+            "goose": "<:canadagoose:1325943169279332443> **_HONK HONK MOTHERHONKERS_**",
             "totally normal goose": ":goose: **_HONK HONK FELLOW NORMAL GOOSE PEOPLE_**",
             "australian chef": ":cook: **g'day mate!**",
             "ostrich": "<:ostrich:1211039583173615686> **HI! I don't know what sound an ostrich makes!**",
