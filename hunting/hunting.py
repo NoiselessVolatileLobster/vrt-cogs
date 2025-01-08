@@ -48,6 +48,7 @@ class Hunting(commands.Cog):
             "parrot": ":parrot: **CACAOOOOOO**",
             "bee": ":bee: **BUZZ OFF**",
             "flamingo": ":flamingo: **_SQUONK_**",
+            "dude with a god complex wearing a rabbit costume": ":rabbit: **_I CAN FIX YOU**",
             "peacock": ":peacock: **_AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA_**",
             "goose": "<:canadagoose:1325943169279332443> **_HONK HONK MOTHERHONKERS_**",
             "totally normal goose": ":goose: **_HONK HONK FELLOW NORMAL GOOSE PEOPLE_**",
